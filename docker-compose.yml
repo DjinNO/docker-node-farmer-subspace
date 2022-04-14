@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  node:
+    image: "subspace-node:latest"
+    network_mode: host
+    ports:
+      - "9944:9944"
+
+  farmer:
+    image: "subspace-farmer:latest"
+    restart: always
+    network_mode: host
+    ports:
+      - "9955:9955"
+    depends_on:
+    - node

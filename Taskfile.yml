@@ -1,0 +1,22 @@
+version: 3.0
+
+tasks:
+  start: 
+    cmds:
+      - docker-compose up -d --force-recreate
+
+  stop: 
+    cmds:
+       - docker-compose stop
+
+  down: 
+    cmds:
+       - docker-compose down
+
+  build:farmer: 
+    cmds:
+      - docker build . -t subspace-farmer -f farmer.Dockerfile 
+      
+  build:node: 
+    cmds:
+      - docker build . -t subspace-node -f node.Dockerfile

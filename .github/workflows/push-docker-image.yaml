@@ -13,10 +13,10 @@ jobs:
       matrix:
         include:
           - dockerfile: ./node/Dockerfile
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/subspace-node:latest
+            image: djinno/subspace-node:latest
             context: ./node
           - dockerfile: ./farmer/Dockerfile
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/subspace-farmer:latest
+            image: djinno/subspace-farmer:latest
             context: ./farmer
     steps:
       -
